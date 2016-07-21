@@ -11,7 +11,29 @@ imagen=pygame.image.load("imagen2.png").convert_alpha()
 imagenf=pygame.image.load("fondo.jpg").convert_alpha()
 imagent=pygame.image.load("arbol.png").convert_alpha()
 imagenc=pygame.image.load("carro.png").convert_alpha()
-#arbol=pygame.image.load("obs.png")
+Fuente = pygame.font.SysFont("Times New Roman	",20,)
+
+def tiempo():
+	aux=1
+	while True:
+		ventana.blit(imagenf,(0,0))
+		ventana.blit(imagent,(posxa,posya))
+		ventana.blit(imagen,(posx,posy))
+		ventana.blit(imagenc,(posxa2,posya2))
+		##ventana.fill((255,255,255))
+		tiempo=pygame.time.get_ticks()/10000
+		if aux == tiempo:
+			aux+=1
+			print (tiempo)
+
+		for event in pygame.event.get():
+			if event.type == QUIT:
+				pygame.quit()
+				sys.exit()
+
+		contador=Fuente.render("tiempo: "+ str(tiempo),0,(120,78,0))
+		ventana.blit(contador,(10,10))
+		pygame.display.update()
 
 #poxa=randint(10,300)
 #posya=randint(10,200)
@@ -39,6 +61,7 @@ while True:
 	ventana.blit(imagent,(posxa,posya))
 	ventana.blit(imagen,(posx,posy))
 	ventana.blit(imagenc,(posxa2,posya2))
+	##tiempo()
 
 	for event in pygame.event.get():
 		if event.type ==QUIT:
