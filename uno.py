@@ -33,7 +33,7 @@ def tiempo():
 				pygame.quit()
 				sys.exit()
 
-		contador=Fuente.render("tiempo: "+ str(tiempo),0,(120,78,0))
+		contador=Fuente.render("Tiempo: "+ str(tiempo),0,(120,78,0))
 		ventana.blit(contador,(10,10))
 		pygame.display.update()
 
@@ -108,6 +108,6 @@ while True:
 		else:
 			derecha=True
 
-	contador = Fuente.render("Tiempo :" +str(Tiempo),0,(250,250,250))
+	contador = Fuente.render("Tiempo :" +str(Tiempo)+" seg.",0,(250,250,250))
 	ventana.blit(contador,(0,550))
 	pygame.display.update()    
