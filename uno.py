@@ -52,6 +52,7 @@ posya2=300
 
 velocidadO=1
 velocidad=2
+velocidads=10
 blanco=(255,255,100)
 derecha=True
 
@@ -69,17 +70,17 @@ while True:
 			sys.exit()
 		elif event.type==pygame.KEYDOWN:
 			if event.key==K_LEFT:
-				posx-=velocidad
+				posx-=velocidads
 			elif event.key==K_RIGHT:
-				posx+=velocidad
+				posx+=velocidads
 		if event.type ==QUIT:
 			pygame.quit()
 			sys.exit()
 		elif event.type==pygame.KEYUP:
 			if event.key==K_UP:
-				posy-=velocidad
+				posy-=velocidads
 			elif event.key==K_DOWN:
-				posy+=velocidad
+				posy+=velocidads
 
 	'''posx,posy=pygame.mouse.get_pos()
 	posx=posx-50
