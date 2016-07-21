@@ -7,7 +7,7 @@ ventana=pygame.display.set_mode((1040,600))#ancho 1400, alto 900
 pygame.display.set_caption("JUEGO SAPO LOCO")
 imagen=pygame.image.load("imagen2.png").convert_alpha()
 imagenf=pygame.image.load("fondo.jpg").convert_alpha()
-imagent=pygame.image.load("arbol.png").convert_alpha()
+imagent=pygame.image.load("arbol.jpg").convert_alpha()
 #arbol=pygame.image.load("obs.png")
 
 #poxa=randint(10,300)
@@ -16,14 +16,14 @@ posx=500
 posy=500
 
 posxa=0
-posya=0
+posya=70
 
 posxa1=0
-posya1=250
+posya1=50
 
-velocidadO=2
+velocidadO=1
 velocidad=20
-blanco=(255,255,255)
+blanco=(255,255,100)
 derecha=True
 
 while True:
