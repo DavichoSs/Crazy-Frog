@@ -13,6 +13,8 @@ imagen=pygame.image.load("imagen2.png").convert_alpha()
 imagenf=pygame.image.load("fondo.jpg").convert_alpha()
 imagent=pygame.image.load("arbol.png").convert_alpha()
 imagenc=pygame.image.load("carro.png").convert_alpha()
+carro2=pygame.image.load("carro2.png").convert_alpha()
+
 Fuente = pygame.font.SysFont("Times New Roman	",20,)
 
 def tiempo():
@@ -51,6 +53,9 @@ posya1=400
 posxa2=0
 posya2=300
 
+posxa3=0
+posya3=350
+
 
 velocidadO=1
 velocidad=2
@@ -69,6 +74,7 @@ while True:
 	ventana.blit(imagent,(posxa,posya))
 	ventana.blit(imagen,(posx,posy))
 	ventana.blit(imagenc,(posxa2,posya2))
+	ventana.blit(carro2,(posxa3,posya3))
 	##tiempo()
 
 	for event in pygame.event.get():
@@ -98,13 +104,16 @@ while True:
 		if posxa & posxa2 <900 :
 			posxa+=velocidadO
 			posxa2+=velocidad
+			posxa3+=velocidad
 		else:
 			derecha=False
 	else:
 		if posxa >1:
 			posxa-=velocidadO
 			posxa2=-80
+			posxa3=-230
 			posxa2+=velocidad
+			posxa3+=velocidad
 		else:
 			derecha=True
 
