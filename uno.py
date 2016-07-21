@@ -27,7 +27,7 @@ posya2=300
 
 
 velocidadO=1
-velocidad=20
+velocidad=2
 blanco=(255,255,100)
 derecha=True
 
@@ -62,13 +62,16 @@ while True:
 
 
 	if derecha==True:
-		if posxa<950:
+		if posxa & posxa2 <900 :
 			posxa+=velocidadO
+			posxa2+=velocidad
 		else:
 			derecha=False
 	else:
-		if posxa>1:
+		if posxa >1:
 			posxa-=velocidadO
+			posxa2=0
+			posxa2+=velocidad
 		else:
 			derecha=True
 
