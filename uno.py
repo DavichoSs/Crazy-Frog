@@ -103,7 +103,7 @@ while True:
 	else:
 		if posxa >1:
 			posxa-=velocidadO
-			posxa2=0
+			posxa2=-80
 			posxa2+=velocidad
 		else:
 			derecha=True
