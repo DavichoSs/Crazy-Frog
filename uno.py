@@ -3,8 +3,10 @@ from pygame.locals import *
 from random import randint
 
 pygame.init()
+
+Fuente=pygame.font.SysFont("Arial",30)
 pygame.mixer.music.load("juego.mp3")
-pygame.mixer.music.play(1)
+pygame.mixer.music.play(0)
 ventana=pygame.display.set_mode((1040,600))#ancho 1400, alto 900
 pygame.display.set_caption("JUEGO SAPO LOCO")
 imagen=pygame.image.load("imagen2.png").convert_alpha()
@@ -55,8 +57,13 @@ velocidad=2
 velocidads=10
 blanco=(255,255,100)
 derecha=True
-
+aux=1
 while True:
+	ventana.fill((255,255,255))
+	Tiempo =pygame.time.get_ticks()/1000
+	if aux == Tiempo:
+		aux+=1
+		print (Tiempo)
 	#ventana.fill(blanco)
 	ventana.blit(imagenf,(0,0))
 	ventana.blit(imagent,(posxa,posya))
@@ -101,6 +108,6 @@ while True:
 		else:
 			derecha=True
 
-	
-
-	pygame.display.update()
+	contador = Fuente.render("Tiempo :" +str(Tiempo),0,(250,250,250))
+	ventana.blit(contador,(0,550))
+	pygame.display.update()    
