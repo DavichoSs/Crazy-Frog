@@ -3,6 +3,8 @@ from pygame.locals import *
 from random import randint
 
 pygame.init()
+pygame.mixer.music.load("juego.mp3")
+pygame.mixer.music.play(1)
 ventana=pygame.display.set_mode((1040,600))#ancho 1400, alto 900
 pygame.display.set_caption("JUEGO SAPO LOCO")
 imagen=pygame.image.load("imagen2.png").convert_alpha()
