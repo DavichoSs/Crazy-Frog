@@ -3,7 +3,7 @@ from pygame.locals import *
 from random import randint
 
 pygame.init()
-ventana=pygame.display.set_mode((1040,600))#ancho 1040, alto 600
+ventana=pygame.display.set_mode((1040,600))#ancho 1400, alto 900
 pygame.display.set_caption("JUEGO SAPO LOCO")
 imagen=pygame.image.load("imagen2.png").convert_alpha()
 imagenf=pygame.image.load("fondo.jpg").convert_alpha()
@@ -12,14 +12,14 @@ imagent=pygame.image.load("arbol.png").convert_alpha()
 
 #poxa=randint(10,300)
 #posya=randint(10,200)
-posx=0
+posx=500
 posy=500
 
 posxa=0
 posya=0
 
 posxa1=0
-posya1=200
+posya1=250
 
 velocidadO=2
 velocidad=20
