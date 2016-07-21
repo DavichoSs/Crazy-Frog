@@ -7,7 +7,8 @@ ventana=pygame.display.set_mode((1040,600))#ancho 1400, alto 900
 pygame.display.set_caption("JUEGO SAPO LOCO")
 imagen=pygame.image.load("imagen2.png").convert_alpha()
 imagenf=pygame.image.load("fondo.jpg").convert_alpha()
-imagent=pygame.image.load("arbol.jpg").convert_alpha()
+imagent=pygame.image.load("arbol.png").convert_alpha()
+imagenc=pygame.image.load("carro.png").convert_alpha()
 #arbol=pygame.image.load("obs.png")
 
 #poxa=randint(10,300)
@@ -16,10 +17,14 @@ posx=500
 posy=500
 
 posxa=0
-posya=70
+posya=39
 
 posxa1=0
-posya1=50
+posya1=400
+
+posxa2=0
+posya2=300
+
 
 velocidadO=1
 velocidad=20
@@ -30,8 +35,8 @@ while True:
 	#ventana.fill(blanco)
 	ventana.blit(imagenf,(0,0))
 	ventana.blit(imagent,(posxa,posya))
-	#ventana.blit(arbol,(posxa1,posya1))
 	ventana.blit(imagen,(posx,posy))
+	ventana.blit(imagenc,(posxa2,posya2))
 
 	for event in pygame.event.get():
 		if event.type ==QUIT:
