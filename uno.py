@@ -112,6 +112,23 @@ while True:
 			posxa5+=velocidad3
 		else:
 			derecha=True
+#colisiones
+	if posx == posxa2 and posy == posya2 :
+		posx=500
+		posy=500
+		print "perdiste"
+	elif posx == posxa3 and posy==posya3:
+		posx=500
+		posy=500
+		print "perdiste"
+	elif posx== posxa4 and posya4:
+		posx=500
+		posy=500
+		print "perdiste"
+	elif posx== posxa5 and posy==posya5:
+		posx=500
+		posy=500
+		print "perdiste"
 
 	contador = Fuente.render("Tiempo :" +str(Tiempo)+" seg.",0,(250,250,250))
 	ventana.blit(contador,(0,550))
