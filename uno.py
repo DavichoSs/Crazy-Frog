@@ -117,15 +117,15 @@ while True:
 		posx=500
 		posy=500
 		print "perdiste"
-	elif posx == posxa3 and posy==posya3:
+	elif posx == posxa3 and posy == posya3:
 		posx=500
 		posy=500
 		print "perdiste"
-	elif posx== posxa4 and posya4:
+	elif posx == posxa4 and posy ==posya4:
 		posx=500
 		posy=500
 		print "perdiste"
-	elif posx== posxa5 and posy==posya5:
+	elif posx == posxa5 and posy == posya5:
 		posx=500
 		posy=500
 		print "perdiste"
