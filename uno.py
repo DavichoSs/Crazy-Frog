@@ -1,17 +1,20 @@
 import pygame,sys
 from pygame.locals import *
 from random import randint
-from Tkinter import *
+from tkinter import *
 
-cuadro = Tk()
-canvas = Canvas(cuadro, width=900, height=400)
-cuadro.title("Crazy Frog")
-fondo = PhotoImage(file="sapoloco.gif")
-lblImagen= Label(cuadro, image=fondo).place(x=0 , y=0)
-inicio= PhotoImage(file="btninicio.gif")
-boton= Button(cuadro,image= inicio ,command=cuadro.quit).place(x=300, y=50)
-canvas.pack()
-cuadro.mainloop()
+def pagina():
+	cuadro = Tk()
+	canvas = Canvas(cuadro, width=900, height=400)
+	cuadro.title("Crazy Frog")
+	fondo = PhotoImage(file="sapoloco.gif")
+	lblImagen= Label(cuadro, image=fondo).place(x=0 , y=0)
+	inicio= PhotoImage(file="btninicio.gif")
+	boton= Button(cuadro,image= inicio ,command=cuadro.quit).place(x=300, y=50)
+	canvas.pack()
+	cuadro.mainloop()
+
+pagina()
 
 pygame.init()
 
@@ -52,7 +55,6 @@ posya4=450
 
 posxa5=0
 posya5=250
-
 
 
 velocidadO=1
@@ -126,28 +128,38 @@ while True:
 		else:
 			derecha=True
 #colisiones
+	
+	def perder (vidas):
+		vidas+=1
+		print ("Te restan "+ str(vidas) +" vidas")
+		if aux == 0:
+			prnt ("Has agotado todas tus vidas")
+
+	vidas+=1
 
 	if posx == posxa4  and posy ==posya4 :
 		posx=500
 		posy=500
-		print "perdiste"
+		perder(vidas)
+		#print ("perdiste")
 
 	elif posx == posxa5 and posy == posya5:
 		posx=500
 		posy=500
-		print "perdiste"
+		perder(vidas)
+		#print ("perdiste")
 
 	if posx == posxa2 and posy == posya2 :
 		posx=500
 		posy=500
-		print "perdiste"
+		perder(vidas)
+		#print ("perdiste")
+
 	elif posx == posxa3 and posy == posya3:
 		posx=500
 		posy=500
-		print "perdiste"
-
-
-
+		perder(vidas)
+		#print ("perdiste")
 
 	contador = Fuente.render("Tiempo :" +str(Tiempo)+" seg.",0,(250,250,250))
 	ventana.blit(contador,(0,550))
