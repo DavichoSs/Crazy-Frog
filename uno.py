@@ -3,19 +3,13 @@ from pygame.locals import *
 from random import randint
 from tkinter import *
 
-x = True
-def iniciar():
-	x= False
-	return x
 cuadro = Tk()
 canvas = Canvas(cuadro, width=900, height=400)
 cuadro.title("Crazy Frog")
-boton= Button(cuadro,text="Iniciar", command=cuadro.quit)
 fondo = PhotoImage(file="sapoloco.gif")
 lblImagen= Label(cuadro, image=fondo).place(x=0 , y=0)
-boton= Button(cuadro,text="Iniciar", command=cuadro.quit)
-boton.pack()
-#iniciar()
+inicio= PhotoImage(file="btninicio.gif")
+boton= Button(cuadro,image= inicio ,command=cuadro.quit).place(x=300, y=50)
 canvas.pack()
 cuadro.mainloop()
 
