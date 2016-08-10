@@ -1,7 +1,7 @@
 import pygame,sys
 from pygame.locals import *
 from random import randint
-from tkinter import *
+from Tkinter import *
 
 cuadro = Tk()
 canvas = Canvas(cuadro, width=900, height=400)
@@ -126,7 +126,6 @@ while True:
 		else:
 			derecha=True
 #colisiones
-<<<<<<< HEAD
 
 	if posx == posxa4  and posy ==posya4 :
 		posx=500
@@ -143,24 +142,11 @@ while True:
 		posy=500
 		print "perdiste"
 	elif posx == posxa3 and posy == posya3:
-=======
-	if posx == posxa2 and posy == posya2:
 		posx=500
 		posy=500
-		print ("perdiste")
-	elif posx == posxa3 and posy == posya3:
-		posx=500
-		posy=500
-		print ("perdiste")
-	elif posx == posxa4 and posy ==posya4:
-		posx=500
-		posy=500
-		print ("perdiste")
-	elif posx == posxa5 and posy == posya5:
->>>>>>> origin/master
-		posx=500
-		posy=500
-		print ("perdiste")
+		print "perdiste"
+
+
 
 
 	contador = Fuente.render("Tiempo :" +str(Tiempo)+" seg.",0,(250,250,250))
