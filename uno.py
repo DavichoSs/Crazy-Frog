@@ -37,7 +37,7 @@ posxa3=0
 posya3=350
 
 posxa4=0
-posya4=400
+posya4=450
 
 posxa5=0
 posya5=250
@@ -95,8 +95,8 @@ while True:
 			posxa+=velocidadO
 			posxa2+=velocidad
 			posxa3+=velocidad
-			posxa4+=velocidad3
-			posxa5+=velocidad3
+			posxa4+=velocidad
+			posxa5+=velocidad
 		else:
 			derecha=False
 	else:
@@ -108,11 +108,22 @@ while True:
 			posxa5=-80
 			posxa2+=velocidad
 			posxa3+=velocidad
-			posxa4+=velocidad3
-			posxa5+=velocidad3
+			posxa4+=velocidad
+			posxa5+=velocidad
 		else:
 			derecha=True
 #colisiones
+
+	if posx == posxa4  and posy ==posya4 :
+		posx=500
+		posy=500
+		print "perdiste"
+
+	elif posx == posxa5 and posy == posya5:
+		posx=500
+		posy=500
+		print "perdiste"
+
 	if posx == posxa2 and posy == posya2 :
 		posx=500
 		posy=500
@@ -121,14 +132,7 @@ while True:
 		posx=500
 		posy=500
 		print "perdiste"
-	elif posx == posxa4 and posy ==posya4:
-		posx=500
-		posy=500
-		print "perdiste"
-	elif posx == posxa5 and posy == posya5:
-		posx=500
-		posy=500
-		print "perdiste"
+
 
 	contador = Fuente.render("Tiempo :" +str(Tiempo)+" seg.",0,(250,250,250))
 	ventana.blit(contador,(0,550))
