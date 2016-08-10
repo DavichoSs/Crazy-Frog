@@ -1,6 +1,23 @@
 import pygame,sys
 from pygame.locals import *
 from random import randint
+from tkinter import *
+
+x = True
+def iniciar():
+	x= False
+	return x
+cuadro = Tk()
+canvas = Canvas(cuadro, width=900, height=400)
+cuadro.title("Crazy Frog")
+boton= Button(cuadro,text="Iniciar", command=cuadro.quit)
+fondo = PhotoImage(file="sapoloco.gif")
+lblImagen= Label(cuadro, image=fondo).place(x=0 , y=0)
+boton= Button(cuadro,text="Iniciar", command=cuadro.quit)
+boton.pack()
+#iniciar()
+canvas.pack()
+cuadro.mainloop()
 
 pygame.init()
 
@@ -51,6 +68,8 @@ velocidads=50
 blanco=(255,255,100)
 derecha=True
 aux=1
+
+
 while True:
 	ventana.fill((255,255,255))
 	Tiempo =pygame.time.get_ticks()/1000
@@ -113,6 +132,7 @@ while True:
 		else:
 			derecha=True
 #colisiones
+<<<<<<< HEAD
 
 	if posx == posxa4  and posy ==posya4 :
 		posx=500
@@ -129,9 +149,24 @@ while True:
 		posy=500
 		print "perdiste"
 	elif posx == posxa3 and posy == posya3:
+=======
+	if posx == posxa2 and posy == posya2:
 		posx=500
 		posy=500
-		print "perdiste"
+		print ("perdiste")
+	elif posx == posxa3 and posy == posya3:
+		posx=500
+		posy=500
+		print ("perdiste")
+	elif posx == posxa4 and posy ==posya4:
+		posx=500
+		posy=500
+		print ("perdiste")
+	elif posx == posxa5 and posy == posya5:
+>>>>>>> origin/master
+		posx=500
+		posy=500
+		print ("perdiste")
 
 
 	contador = Fuente.render("Tiempo :" +str(Tiempo)+" seg.",0,(250,250,250))
