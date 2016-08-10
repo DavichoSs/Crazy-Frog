@@ -3,26 +3,29 @@ from pygame.locals import *
 from random import randint
 from tkinter import *
 
-def pagina():
+def pagina(): #Funcion Pagina de Inicio
 	cuadro = Tk()
 	canvas = Canvas(cuadro, width=900, height=400)
-	cuadro.title("Crazy Frog")
+	cuadro.title("CRAZY FROG")
 	fondo = PhotoImage(file="sapoloco.gif")
-	lblImagen= Label(cuadro, image=fondo).place(x=0 , y=0)
+	lblImagen= Label(cuadro, image=fondo).place(x=0 , y=0) #definida como pantalla de fondo
 	inicio= PhotoImage(file="btninicio.gif")
-	boton= Button(cuadro,image= inicio ,command=cuadro.quit).place(x=300, y=50)
+	boton= Button(cuadro,image= inicio ,command=cuadro.quit).place(x=300, y=50) # definida como imagen en un punto especifico
 	canvas.pack()
 	cuadro.mainloop()
 
-pagina()
+vidas =5
+#pagina() #Llamado a la funcion
 
 pygame.init()
+
+pagina() 
 
 Fuente=pygame.font.SysFont("Arial",30)
 pygame.mixer.music.load("juego.mp3")
 pygame.mixer.music.play(1)
 ventana=pygame.display.set_mode((1040,600))#ancho 1400, alto 900
-pygame.display.set_caption("JUEGO SAPO LOCO")
+pygame.display.set_caption("CRAZY FROG")
 imagen=pygame.image.load("imagen2.png").convert_alpha()
 imagenf=pygame.image.load("fondo.jpg").convert_alpha()
 imagent=pygame.image.load("arbol.png").convert_alpha()
@@ -129,35 +132,46 @@ while True:
 			derecha=True
 #colisiones
 	
-	def perder (vidas):
-		vidas+=1
-		print ("Te restan "+ str(vidas) +" vidas")
-		if aux == 0:
-			prnt ("Has agotado todas tus vidas")
+	def perder (vidas): #Funcion de la vidas del sapo
+		vidas= vidas-1
+		aux = vidas
+		print ("Te restan "+ str(aux) +" vidas")
+		if vidas == 0:
+			print ("Has agotado todas tus vidas")
+			pygame.display.quit()
+			fin = Tk()
+			canvas = Canvas(fin, width=200, height=200)
+			label1=Label(fin, text="Has Perdido", fg="red", bg="black")
+			label1.pack()
+			canvas.pack()
+			fin.mainloop()
 
-	vidas+=1
 
 	if posx == posxa4  and posy ==posya4 :
 		posx=500
 		posy=500
+		vidas-=1
 		perder(vidas)
 		#print ("perdiste")
 
 	elif posx == posxa5 and posy == posya5:
 		posx=500
 		posy=500
+		vidas-=1
 		perder(vidas)
 		#print ("perdiste")
 
 	if posx == posxa2 and posy == posya2 :
 		posx=500
 		posy=500
+		vidas-=1
 		perder(vidas)
 		#print ("perdiste")
 
 	elif posx == posxa3 and posy == posya3:
 		posx=500
 		posy=500
+		vidas=-1
 		perder(vidas)
 		#print ("perdiste")
 
