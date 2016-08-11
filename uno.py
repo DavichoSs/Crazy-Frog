@@ -1,9 +1,10 @@
 import pygame,sys
 from pygame.locals import *
 from random import randint
-from tkinter import *
+from Tkinter import *
 
-def pagina(): #Funcion Pagina de Inicio
+#Funcion Pagina de Inicio
+def pagina(): 
 	cuadro = Tk()
 	canvas = Canvas(cuadro, width=900, height=400)
 	cuadro.title("CRAZY FROG")
@@ -102,11 +103,6 @@ while True:
 				posy-=velocidads
 			elif event.key==K_DOWN:
 				posy+=velocidads
-
-	'''posx,posy=pygame.mouse.get_pos()
-	posx=posx-50
-	posy=posy-50'''
-
 
 	if derecha==True:	
 		if posxa  <900 :
