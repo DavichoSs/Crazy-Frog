@@ -135,12 +135,14 @@ while True:
 		if vidas == 0:
 			print ("Has agotado todas tus vidas")
 			pygame.display.quit()
-			fin = Tk()
-			canvas = Canvas(fin, width=200, height=200)
-			label1=Label(fin, text="Has Perdido", fg="red", bg="black")
-			label1.pack()
+			final = Tk()
+			canvas = Canvas(final, width=440, height=440)
+			final.title("CRAZY FROG")
+			lblfinal= Label(final,text="GAME OVER")
+			lblfinal.pack()
 			canvas.pack()
-			fin.mainloop()
+			final.mainloop()
+			final.quit
 
 
 	if posx == posxa4  and posy ==posya4 :
