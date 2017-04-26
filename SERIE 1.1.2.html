@@ -1,0 +1,41 @@
+<html lang="es">
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['bar']});
+      google.charts.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var data = google.visualization.arrayToDataTable([
+          ['A\u00F1o', 'Con Internaci\u00F3n', 'Sin Internaci\u00F3n'],
+          ['2000', 583, 2999],
+          ['2001', 623, 3029],
+          ['2002', 642, 2981],
+          ['2003', 628, 2873],
+          ['2004', 700, 3090],  
+          ['2005', 743, 3169],
+          ['2006', 683, 2998],
+          ['2007', 729, 3118],
+          ['2008', 714, 3099],
+          ['2009', 728, 3166],  
+          ['2010', 743, 3238],
+          ['2011', 753, 3279],
+          ['2012', 735, 3280],
+          ['2013', 765, 3458],
+          ['2014', 742, 3397]
+        
+        ]);
+        var options = {
+          chart: {
+            title: 'Serie 1.1.2',
+            subtitle: 'Numero de Establecimientos de Salud con Internaci\u00F3n y sin Internaci\u00F3n Hospitalaria Periodo 2000-2014',
+          }
+        };
+        var chart = new google.charts.Bar(document.getElementById('columnchart_material'));
+        chart.draw(data, google.charts.Bar.convertOptions(options));
+      }
+    </script>
+  </head>
+  <body>
+    <div id="columnchart_material" style="width: 800px; height: 500px;"></div>
+  </body>
+</html>
